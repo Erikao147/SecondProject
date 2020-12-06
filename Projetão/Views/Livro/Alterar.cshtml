@@ -1,0 +1,49 @@
+﻿@using Projetão.Models;
+@{
+    Livro livro = ViewBag.Livro;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Alterar Livro</title>
+</head>
+<body>
+    <form asp-action="Alterar" asp-controller="Livro" method="post">
+        <fieldset>
+            <legend>Alterar Livro</legend>
+            <label for="Id">ID</label>
+            <input value="@livro.Id" name="Id" readonly type="text" placeholder="Informe o ID" />
+            <input value="@livro.Id" name="hdnId" readonly type="hidden" />
+            <br />
+
+            <label for="nome">Nome do Livro:</label>
+            <input value="@livro.Nome" name="nome" type="text" placeholder="Informe o Nome" />
+            <br />
+
+            <label for="resumo">Descrição:</label>
+            <input value="@livro.Resumo" name="resumo" type="text" placeholder="Breve Resumo e Tema" />
+            <br />
+
+            <label for="data">Data de Lançamento:</label>
+            <input value="@livro.Lançamento" name="data" type="date" placeholder=" Informe o Dia de Lançamento" />
+            <br />
+
+            <label for="valor">Aluguel Diario:</label>
+            <input value="@livro.Valor" name="valor" type="text" placeholder="O Valor para Emprestimo" />
+            <br />
+
+            <label for="quant">Quantidade:</label>
+            <input value="@livro.Quantidade" name="quant" type="text" placeholder="Quantidade em Estoque" />
+            <br />
+
+            <input type="submit" value="Salvar" />
+        </fieldset>
+    </form>
+
+</body>
+</html>
+

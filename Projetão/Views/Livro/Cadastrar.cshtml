@@ -1,0 +1,43 @@
+﻿@using Projetão.Models
+@model Livro
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cadastrar</title>
+</head>
+<body>
+    <form asp-action="Cadastrar" asp-controller="Livro" method="post">
+        <fieldset>
+            <legend>Cadastro de Livro</legend>
+
+            <div asp-validation-summary="ModelOnly"></div>
+            
+            <label asp-for="Nome">Nome do Livro:</label>
+            <input asp-for="Nome" type="text" placeholder="Informe o Nome" />
+            <br />
+
+            <label asp-for="Resumo">Descrição:</label>
+            <input asp-for="Resumo" type="text" placeholder="Breve Resumo e Tema" />
+            <br />
+
+            <label asp-for="Lançamento">Data de Lançamento:</label>
+            <input asp-for="Lançamento" type="date" placeholder=" Informe o Dia de Lançamento" />
+            <br />
+
+            <label asp-for="Valor">Aluguel Diario:</label>
+            <input asp-for="Valor" type="text" placeholder="O Valor para Emprestimo" />
+            <br />
+
+            <label asp-for="Quantidade">Quantidade:</label>
+            <input asp-for="Quantidade" type="text" placeholder="Quantidade em Estoque" />
+            <br />
+
+            <input type="submit" value="Cadastrar" />
+        </fieldset>
+    </form>
+
+</body>
+</html>

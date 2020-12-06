@@ -1,0 +1,54 @@
+﻿@using Projetão.Models
+@{List<Livro> livros = ViewBag.Livros;
+    int quantidade = ViewBag.Quantidade;}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gerenciamento de Livros</title>
+
+</head>
+<body>
+    <h2>Gerenciamento de Livros</h2>
+    <a asp-action="Cadastrar" asp-controller="Livro"> Cadastrar Livros  </a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome:</th>
+                <th>Lançamento:</th>
+                <th>Resumo:</th>
+                <th>Valor:</th>
+                <th>Estoque Disponivel:</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Livro livroCadastrado in livros) 
+            {
+            <tr>
+                <td>@livroCadastrado.Id</td>
+                <td>@livroCadastrado.Nome</td>
+                <td>@livroCadastrado.Lançamento</td>
+                <td>@livroCadastrado.Resumo</td>
+                <td>@livroCadastrado.Valor</td>
+                <td>@livroCadastrado.Quantidade</td>
+                <td>
+                    <a asp-action="Remover" asp-controller="Livro" asp-route-id="@livroCadastrado.Id"> Remover</a>
+                </td>
+                <td>
+                    <a asp-action="Alterar" asp-controller="Livro" asp-route-id="@livroCadastrado.Id"> Alterar</a>
+                </td>
+
+            </tr>
+            }
+
+        </tbody>
+    </table>
+
+    <p><b>Quantidade de Livros Dísponiveis:</b> @quantidade</p>
+    <p><b>Atualizado em: </b> @DateTime.Now</p>
+
+</body>
+
+</html>
